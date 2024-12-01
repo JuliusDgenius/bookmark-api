@@ -1,0 +1,17 @@
+version: '3.8' # Adjusted version format
+
+services:
+  dev-db:
+    image: postgres:13 # Specify the image
+    ports:
+      - 5434:5432 # Corrected indentation
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - freecodecamp # Service connected to the network
+
+networks:
+  freecodecamp: # Defined the network
+    driver: bridge
